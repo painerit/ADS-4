@@ -12,10 +12,10 @@ int countPairs1(int *arr, int len, int value) {
 int countPairs2(int *arr, int len, int value) {
   int sum = 0;
   for (int i = 0; i < len; i++) {
-    if (value/2 < i)
+    if (value/2 < arr[i])
       break;
     for (int j = (len - 1); j > i; j--) {
-      if (value/2 > j)
+      if (value/2 > arr[j])
         continue;
       else if (arr[i] + arr[j] == value)
         sum++;
@@ -36,16 +36,16 @@ int nums(int *arr, int len, int mid, int sum) {
   }
   return sum;
 }
-int BinSearch(int *arr, int len, int value, int left, int sum) {
-  int right = len - 1, num = left;
+int BinSearch(int* arr, int len, int value, int left, int sum) {
+  int right = len - 1, num = left - 1;
   while (left < right) {
     int mid = left + (right - left) / 2;
-    if (num + arr[mid] == value)
-      return nums(arr, len, mid, sum);
-    else if (num + arr[mid] > value)
-      right = mid;
-    else
-      left = mid + 1;
+      if (arr[num] + arr[mid] == value)
+        return nums(arr, len, mid, sum);
+      else if (arr[num] + arr[mid] > value)
+        right = mid;
+      else
+        left = mid + 1;
   }
   return sum;
 }
