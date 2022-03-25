@@ -26,11 +26,11 @@ int countPairs2(int *arr, int len, int value) {
 int nums(int *arr, int len, int mid, int sum) {
   sum++;
   int mid2 = mid;
-  while ((arr[mid2] == arr[mid2 + 1]) && (arr[mid2 + 1] < len)) {
+  while ((arr[mid2] == arr[mid2 + 1]) && (mid2 + 1 < len)) {
     sum++;
     mid2++;
   }
-  while ((arr[mid] == arr[mid - 1]) && (arr[mid-1] >= 0)) {
+  while ((arr[mid] == arr[mid - 1]) && ([mid - 1 >= 0)) {
     sum++;
     mid--;
   }
