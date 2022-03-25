@@ -24,7 +24,8 @@ int countPairs2(int *arr, int len, int value) {
   return sum;
 }
 int nums(int *arr, int len, int mid, int sum, int num) {
-  sum++;
+  if (num != mid)
+    sum++;
   int mid2 = mid;
   while ((arr[mid2] == arr[mid2 + 1]) && (mid2 + 1 < len)) {
     sum++;
@@ -40,7 +41,7 @@ int BinSearch(int* arr, int len, int value, int left, int sum) {
   int right = len - 1, num = left;
   while (left <= right) {
     int mid = left + (right - left) / 2;
-      if ((arr[num] + arr[mid] == value) && (num != mid))
+      if (arr[num] + arr[mid] == value)
         return nums(arr, len, mid, sum, num);
       else if (arr[num] + arr[mid] > value)
         right = mid;
