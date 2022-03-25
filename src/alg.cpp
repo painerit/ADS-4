@@ -30,7 +30,7 @@ int nums(int *arr, int len, int mid, int sum) {
     sum++;
     mid2++;
   }
-  while ((arr[mid] == arr[mid-1]) && ([mid - 1 >= 0)) {
+  while ((arr[mid] == arr[mid - 1]) && (mid - 1 >= 0)) {
     sum++;
     mid--;
   }
