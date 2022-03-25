@@ -53,7 +53,7 @@ int BinSearch(int* arr, int len, int value, int left, int sum) {
 int countPairs3(int *arr, int len, int value) {
   int sum = 0;
   for (int i = 0; i < len; i++) {
-    if (value/2 <= arr[i])
+    if (value/2 < arr[i])
       break;
   sum = BinSearch(arr, len, value, i, sum);
   }
