@@ -54,7 +54,7 @@ int countPairs3(int *arr, int len, int value) {
   for (int i = 0; i < len; i++) {
     if (value/2 <= arr[i])
       break;
-  sum = BinSearch(arr, len, value, i + 1, sum);
+  sum = BinSearch(arr, len, value, i, sum);
   }
   return sum;
 }
