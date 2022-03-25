@@ -40,7 +40,7 @@ int BinSearch(int* arr, int len, int value, int left, int sum) {
   int right = len - 1, num = left;
   while (left <= right) {
     int mid = left + (right - left) / 2;
-      if (arr[num] + arr[mid] == value)
+      if ((arr[num] + arr[mid] == value) && (num != mid))
         return nums(arr, len, mid, sum);
       else if (arr[num] + arr[mid] > value)
         right = mid;
